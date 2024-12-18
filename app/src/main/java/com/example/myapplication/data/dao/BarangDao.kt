@@ -1,35 +1,23 @@
 package com.example.myapplication.data.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.myapplication.data.entity.Barang
-import com.example.myapplication.data.entity.Suplier
-import kotlinx.coroutines.flow.Flow
-
 
 @Dao
 interface BarangDao {
     @Insert
-    suspend fun insertBARANG(
-        barang: Barang
-    )
+    suspend fun insertBarang(barang: Barang)
 
-@Query("SELECT * FROM Barang  ORDER BY nama")
-fun getAllBarang() : Flow<Suplier>
-
-@Query("SELECT * FROM Barang WHERE deskripsi")
-fun getBarang (deskripsi: String) Flow<Barang>
-
-    @Delete
-    suspend fun deletebarang(
-       barang: Barang
-    )
+    @Query("SELECT * FROM Barang")
+    fun getAllBarang(): LiveData<List<Barang>>
 
     @Update
-    suspend fun updateDosen(
-        barang: Barang
-    )
+    suspend fun updateBarang(barang: Barang)
+
+    @Delete
+    suspend fun deleteBarang(barang: Barang)
+
+    @Query("SELECT * FROM Barang WHERE id = :id")
+    fun getBarangById(id: Int): LiveData<Barang>
 }
