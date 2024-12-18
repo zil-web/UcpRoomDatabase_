@@ -20,7 +20,7 @@ interface BarangDao {
 @Query("SELECT * FROM Barang  ORDER BY nama")
 fun getAllBarang() : Flow<Suplier>
 
-@Query("SELECT * FROM Barang ORDER BY deskripsi")
+@Query("SELECT * FROM Barang WHERE deskripsi")
 fun getBarang (deskripsi: String) Flow<Barang>
 
     @Delete
