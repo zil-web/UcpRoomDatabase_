@@ -41,7 +41,7 @@ fun PilihanHomeView(
                 modifier = Modifier.padding(bottom = 32.dp)
             )
 
-            // Tombol untuk Home Dosen
+            // Tombol untuk Home suplier
             androidx.compose.material3.Button(
                 onClick = onBarangClick,
                 modifier = Modifier
@@ -51,7 +51,7 @@ fun PilihanHomeView(
                 Text(text = "tambah barang")
             }
 
-            // Tombol untuk Home Mahasiswa
+            // Tombol untuk Home barang
             androidx.compose.material3.Button(
                 onClick = onSuplierClick,
                 modifier = Modifier.fillMaxWidth()
@@ -59,21 +59,7 @@ fun PilihanHomeView(
                 Text(text = "tambah suplier")
             }
 
-            // Tombol untuk Home Mahasiswa
-            androidx.compose.material3.Button(
-                onClick = onDetailBarangClick,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "detail Barang")
-            }
 
-            // Tombol untuk Home Mahasiswa
-            androidx.compose.material3.Button(
-                onClick = onDetailSuplierClick,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(text = "Detail Suplier")
-            }
         }
     }
 }
