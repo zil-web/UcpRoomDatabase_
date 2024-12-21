@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 
-class HomeDsnViewModel(
+class homebrgViewModel(
     private val repositorybrg: Repositorybrg
 ) : ViewModel() {
 

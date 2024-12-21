@@ -15,7 +15,7 @@ object PenyediaViewModel {
         }
 
         initializer {
-            HomeBarangViewModel (
+            homebrgViewModel (
                 validasiApp().containerApp.repositorybrg
             )
         }

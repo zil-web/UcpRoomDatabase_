@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.PrimaryKey
 import com.example.myapplication.data.entity.Barang
 import com.example.ucp2.repository.Repositorybrg
 import kotlinx.coroutines.launch
@@ -70,7 +69,7 @@ class BarangViewModel (private val repositorybrg: Repositorybrg) : ViewModel(){
 }
 
 data class BrgUIState(
-    val barangEvent: BarangEvent,
+    val barangEvent: BarangEvent = BarangEvent(), // Inisialisasi dengan BarangEvent()
     val isbrgEntryValid: FormErrorbrgState = FormErrorbrgState(),
     val snackBarMessage: String? = null,
 )
@@ -98,7 +97,6 @@ fun BarangEvent.toBarangEntity(): Barang = Barang (
 
 // data class variabel yang menyimpan data input form
 data class BarangEvent(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nama: String = "",
     val deskripsi: String = "",
     val harga: String = "" ,
