@@ -15,7 +15,7 @@ object PenyediaViewModel {
         }
 
         initializer {
-            homebrgViewModel (
+            HomebrgViewModel (
                 validasiApp().containerApp.repositorybrg
             )
         }
@@ -26,7 +26,7 @@ object PenyediaViewModel {
         }
 
         initializer {
-            HomeSuplierViewModel (
+            HomesplrViewmodel (
                 validasiApp().containerApp.repositorySplr
             )
         }
@@ -34,4 +34,4 @@ object PenyediaViewModel {
 }
 
 fun CreationExtras.validasiApp() : validasiApp =
-    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as KrsApp)
+    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as validasiApp)

@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.PrimaryKey
 import com.example.myapplication.data.entity.Suplier
 import com.example.ucp2.repository.RepositorySplr
 import kotlinx.coroutines.launch
@@ -80,22 +79,20 @@ data class FormErrorsplrState(
     val alamat: String? = null
 ) {
     fun isValid(): Boolean {
-        return nama == null && kontak == null && kontak == null && alamat == null
+        return nama == null && kontak == null && alamat == null // Perbaikan di sini
     }
 }
 
 //Menyimpan input form ke dalam entity
 fun SuplierEvent.toSuplierEntity(): Suplier = Suplier  (
-    id = id,
     nama = nama,
     kontak = kontak,
     alamat = alamat,
 
-)
+    )
 
 // data class variabel yang menyimpan data input form
 data class SuplierEvent(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0, // Anotasi @PrimaryKey di sini
     val nama: String = "",
     val kontak: String = "",
     val alamat: String = ""
