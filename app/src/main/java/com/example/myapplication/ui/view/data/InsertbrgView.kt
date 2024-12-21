@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.ui.navigation.AlamatNavigasi
 import com.example.myapplication.ui.viewmodel.BarangEvent
 import com.example.myapplication.ui.viewmodel.BarangViewModel
 import com.example.myapplication.ui.viewmodel.BrgUIState
