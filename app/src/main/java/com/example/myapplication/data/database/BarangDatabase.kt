@@ -12,7 +12,7 @@ import com.example.myapplication.data.entity.Suplier
 
 //Mendefinisikan database dengan tabel mahasiswa
 @Database(entities = [Barang::class, Suplier ::class], version = 2, exportSchema = false)
-abstract class KrsDatabase : RoomDatabase() {
+abstract class BarangDatabase : RoomDatabase() {
 
     //Mendefinisikan fungsi untuk mengakses data Mahasiswa dan Dosen
     abstract fun BarangDao(): BarangDao
@@ -20,14 +20,14 @@ abstract class KrsDatabase : RoomDatabase() {
 
     companion object{
         @Volatile //Memastikan bahwa nilai variabel Instance selalu sama di semua thread
-        private var Instance: KrsDatabase? = null
+        private var Instance: BarangDatabase? = null
 
-        fun getDatabase(context: Context): KrsDatabase {
+        fun getDatabase(context: Context): BarangDatabase {
             return (Instance ?: synchronized(this){
                 Room.databaseBuilder(
                     context,
-                    KrsDatabase::class.java, //Class Database
-                    "KrsDatabaseTest" //Nama Database
+                    BarangDatabase::class.java, //Class Database
+                    "BarangDatabaseTest" //Nama Database
                 )
                     .build().also { Instance = it }
             })
