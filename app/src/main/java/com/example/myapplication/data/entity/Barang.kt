@@ -16,7 +16,7 @@ data class Barang(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nama: String,
     val deskripsi: String,
-    val harga: Double,
-    val stok: Int,
-    val suplierId: Int
+    val harga: String,
+    val stok: String,
+    val suplierId: String
 )
